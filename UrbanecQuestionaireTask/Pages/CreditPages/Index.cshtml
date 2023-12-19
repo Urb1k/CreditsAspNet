@@ -1,0 +1,29 @@
+﻿@page
+@model UrbanecQuestionaireTask.Pages.CreditPages.IndexModel
+@{
+}
+
+<h1>Výsledky (@Model.Credits.Count())</h1>
+
+@foreach (var item in Model.Credits)
+{
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="row"style="position: relative; height: 50px">
+                <div class="col-md-6" style="position: absolute; top: 25%">
+                    <h5 class="card-title">Splněno: <strong>@item.Success</strong></h5>
+                </div>
+                <div class="col-md-3" style="position: absolute; top: 25%; left: 44%">
+                    <p class="card-text">
+                        Známka: <strong>@item.Value</strong>
+                    </p>
+                </div>
+                <div class="col-md-3" style="position: absolute; top: 25%; left: 82%">
+                    <p class="card-text">
+                        V čase: <strong>@item.Created</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
